@@ -40,6 +40,14 @@ dependencies {
 
 afterEvaluate {
     publishing {
+        publications {
+            create<MavenPublication>("meeting") {
+                artifactId = "meeting"
+                group = "us.zoom.sdk"
+                version = "5.15.12"
+                from(components["release"])
+            }
+        }
         repositories {
             maven("https://maven.pkg.github.com/hello-sunrise/zoom-meeting-sdk") {
                 credentials {
@@ -50,15 +58,6 @@ afterEvaluate {
                         "Missing \"sunrise.maven.password\" in gradle.properties"
                     }
                 }
-            }
-        }
-
-        publications {
-            create<MavenPublication>("meeting") {
-                artifactId = "meeting"
-                group = "us.zoom.sdk"
-                version = "5.15.12"
-                from(components["release"])
             }
         }
     }
