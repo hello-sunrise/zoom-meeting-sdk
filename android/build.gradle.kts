@@ -44,7 +44,7 @@ afterEvaluate {
             create<MavenPublication>("meeting") {
                 artifactId = "meeting"
                 group = "us.zoom.sdk"
-                version = "5.15.12"
+                version = "5.16.2"
                 from(components["release"])
             }
         }

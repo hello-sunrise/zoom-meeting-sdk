@@ -10,7 +10,7 @@ publishing {
         create<MavenPublication>("core") {
             artifactId = "core"
             group = "us.zoom.sdk"
-            version = "5.15.12"
+            version = "5.16.2"
             artifact(artifact)
         }
     }
